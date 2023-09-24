@@ -30,21 +30,22 @@ namespace First_task
             Cube cube = new Cube();
             try
             {
+                Console.Write("Введіть значення ребра: ");
                 cube.edge = Convert.ToDouble(Console.ReadLine());
                 cube.Print();
                 if(cube.Correct())
                 {
-                    Console.WriteLine("Площа поверхні куба: " + cube.Area());
-                    Console.WriteLine("Об’єм куба: " + cube.Volume());
+                    Console.WriteLine(@"Площа поверхні куба: {0:F3}", cube.Area());
+                    Console.WriteLine(@"Об’єм куба: {0:F3}", cube.Volume());
                 }
                 else
                 {
                     Console.WriteLine("Такого куба не може існувати! Його ребро має бути додатнім і не дорівнювати нулю!");
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine("Наявне виключення: " + e.Message);
+                Console.WriteLine("Некоректне введення даних!");
             }
         }
     }
